@@ -17,7 +17,8 @@ axios.interceptors.response.use(
             toast.error('Somthing was wrong. Try it leter')
         }
         return Promise.reject(error)
-    })
+    }
+)
 const httpService = {
     get: axios.get,
     post: axios.post,

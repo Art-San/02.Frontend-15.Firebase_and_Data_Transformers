@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Quality from './quality'
+import Qualitie from './Qualitie'
 import { useQualities } from '../../../hooks/useQualities'
 
 const QualitiesList = ({ qualities }) => {
@@ -10,14 +10,14 @@ const QualitiesList = ({ qualities }) => {
     return (
         <>
             {qualities.map((qual) => (
-                <Quality key={qual} id={qual} />
+                <Qualitie key={qual} id={qual} />
             ))}
         </>
     )
 }
 
 QualitiesList.propTypes = {
-    qualities: PropTypes.array
+    qualities: PropTypes.array.isRequired
 }
 
 export default QualitiesList

@@ -24,7 +24,7 @@ const SelectField = ({
 
     return (
         <div className="mb-4">
-            <label htmlFor={name} className="form-label">
+            <label htmlFor="validationCustom04" className="form-label">
                 {label}
             </label>
             <select
@@ -54,7 +54,7 @@ SelectField.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func,
-    error: PropTypes.string,
+    error: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     name: PropTypes.string
 }

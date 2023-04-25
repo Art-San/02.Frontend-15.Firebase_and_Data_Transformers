@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const CheckBoxField = ({ name, value, onChange, children, error }) => {
-    const handleChange = () => {
-        onChange({ name: name, value: !value })
+    const handleChange = ({ target }) => {
+        onChange({ name, value: !value })
+        // onChange({ name: name, value: !value }) // Последние корректировки
     }
     const getInputClasses = () => {
         return 'form-check-input' + (error ? ' is-invalid' : '')
@@ -18,22 +19,23 @@ const CheckBoxField = ({ name, value, onChange, children, error }) => {
                 onChange={handleChange}
                 checked={value}
             />
-            <label className="form-check-label" htmlFor={name}>
+            <label className="form-check-label " htmlFor={name}>
                 {children}
             </label>
             {error && <div className="invalid-feedback">{error}</div>}
         </div>
     )
 }
+
 CheckBoxField.propTypes = {
     name: PropTypes.string,
-    value: PropTypes.bool,
     onChange: PropTypes.func,
+    value: PropTypes.bool,
+    error: PropTypes.string,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
-    ]),
-    error: PropTypes.string
+    ]) // можем принимать масив детей так иодного ребенка
 }
 
 export default CheckBoxField

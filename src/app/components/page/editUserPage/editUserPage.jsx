@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { validator } from '../../../utils/validator'
 import api from '../../../api'
-import TextField from '../../common/form/textField'
-import SelectField from '../../common/form/selectField'
-import RadioField from '../../common/form/radioField'
-import MultiSelectField from '../../common/form/multiSelectField'
-import BackHistoryButton from '../../common/backButton'
+import TextField from '../../common/form/TextField'
+import SelectField from '../../common/form/SelectField'
+import RadioField from '../../common/form/RadioField'
+import MultiSelectField from '../../common/form/MultiSelectField'
+import BackHistoryButton from '../../common/BackButton'
 
 const EditUserPage = () => {
     const { userId } = useParams()

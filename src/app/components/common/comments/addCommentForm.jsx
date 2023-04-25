@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../../api'
-import SelectField from '../form/selectField'
-import TextAreaField from '../form/textAreaField'
+import SelectField from '../form/SelectField'
+import TextAreaField from '../form/TextAreaField'
 import { validator } from '../../../utils/validator'
 import PropTypes from 'prop-types'
 const initialData = { userId: '', content: '' }

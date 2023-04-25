@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import BookMark from '../common/bookmark'
+import BookMark from '../common/Bookmark'
 import Qualities from './qualities'
 import Table from '../common/table'
 import { Link } from 'react-router-dom'
-import Profession from './profession'
+import Profession from './Profession'
 
 const UserTable = ({
     users,
@@ -29,7 +28,7 @@ const UserTable = ({
         },
         professions: {
             name: 'Профессия',
-            component: (user) => <Profession id={user.profession}/>
+            component: (user) => <Profession id={user.profession} />
         },
         completedMeetings: {
             path: 'completedMeetings',
