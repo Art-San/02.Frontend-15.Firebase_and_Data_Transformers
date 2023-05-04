@@ -31,7 +31,7 @@ function transformData(data) {
 
 axios.interceptors.response.use(
     (res) => {
-        if (configFile.isFireBase) { // Axios interceptors. Response. Трансформация данных
+        if (configFile.isFireBase) { // Axios interceptors.  Response. Трансформация данных
             res.data = { content: transformData(res.data) }
         }
         return res
