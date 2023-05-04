@@ -13,14 +13,29 @@ axios.interceptors.request.use(
             config.url =
                 (containSlash ? config.url.slice(0, -1) : config.url) + '.json'
         }
-        console.log(config.url)
+        // console.log(config.url)
         return config
     }, function (error) {
-       return Promise.reject(error)
+        return Promise.reject(error)
     }
 )
+
+// Axios interceptors. Response. Трансформация данных
+function transformData(data) {
+    return data
+        ? Object.keys(data).map((key) => ({
+            ...data[key]
+        }))
+        : []
+}
+
 axios.interceptors.response.use(
-    (res) => res,
+    (res) => {
+        if (configFile.isFireBase) { // Axios interceptors. Response. Трансформация данных
+            res.data = { content: transformData(res.data) }
+        }
+        return res
+    },
     function (error) {
         const expectedErrors =
             error.response &&
