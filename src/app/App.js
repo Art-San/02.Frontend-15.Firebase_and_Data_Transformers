@@ -7,12 +7,12 @@ import NavBar from './components/ui/NavBar'
 import { ToastContainer } from 'react-toastify'
 import { ProfessionProvider } from './hooks/useProfession'
 import { QualitiesProvider } from './hooks/useQualities'
+// данные приходят с монгодб
 
 function App() {
     return (
         <div>
             <NavBar />
-            {/* <QualitiesProvider> */}
             <ProfessionProvider>
                 <QualitiesProvider>
                     <Switch>
@@ -27,7 +27,6 @@ function App() {
                 </QualitiesProvider>
             </ProfessionProvider>
             <ToastContainer />
-            {/* </QualitiesProvider> */}
         </div>
     )
 }
