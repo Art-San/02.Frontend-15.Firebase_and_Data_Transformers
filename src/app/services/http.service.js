@@ -4,6 +4,8 @@ import configFile from '../config.json'
 
 axios.defaults.baseURL = configFile.apiEndpoint
 
+// Axios interceptors. Request. Модификация URL
+// если есть файр байс то значит он иначе первый вариант
 axios.interceptors.request.use(
     function (config) {
         if (configFile.isFireBase) {
@@ -11,22 +13,27 @@ axios.interceptors.request.use(
             config.url =
                 (containSlash ? config.url.slice(0, -1) : config.url) + '.json'
         }
+        // console.log(config.url)
         return config
-    }, function (error) {
+    },
+    function (error) {
         return Promise.reject(error)
     }
 )
+
+// Axios interceptors. Response. Трансформация данных
 function transformData(data) {
     return data
         ? Object.keys(data).map((key) => ({
-            ...data[key]
-        }))
+              ...data[key]
+          }))
         : []
 }
 
 axios.interceptors.response.use(
     (res) => {
         if (configFile.isFireBase) {
+            // Axios interceptors.  Response. Трансформация данных
             res.data = { content: transformData(res.data) }
         }
         return res

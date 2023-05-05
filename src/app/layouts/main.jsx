@@ -1,8 +1,6 @@
 import React from 'react'
 import useMockData from '../utils/mockData'
 const Main = () => {
-    return <h1>MainPage</h1>
-
     const { error, initialize, progress, status } = useMockData()
     const handleClick = () => {
         initialize()
