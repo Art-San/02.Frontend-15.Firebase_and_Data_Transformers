@@ -13,7 +13,6 @@ function App() {
     return (
         <div>
             <NavBar />
-            {/* <QualitiesProvider> */}
             <ProfessionProvider>
                 <QualitiesProvider>
                     <Switch>
@@ -28,7 +27,6 @@ function App() {
                 </QualitiesProvider>
             </ProfessionProvider>
             <ToastContainer />
-            {/* </QualitiesProvider> */}
         </div>
     )
 }
