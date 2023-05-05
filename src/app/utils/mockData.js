@@ -6,10 +6,7 @@ import httpService from '../services/http.service'
 
 const useMockData = () => {
     const statusConsts = {
-<<<<<<< HEAD
-=======
         // Инициализация Mock-данных
->>>>>>> 06.Initialize_Mock_Data
         idle: 'Not Started',
         pending: 'In Procese',
         successed: 'Ready',
@@ -21,16 +18,10 @@ const useMockData = () => {
     const [count, setCount] = useState(0)
     const summuryCount = professions.length + qualities.length + users.length
     const incrementCount = () => {
-<<<<<<< HEAD
-        setCount(prevState => prevState + 1)
-    }
-    const updateProgress = () => {
-=======
         setCount((prevState) => prevState + 1)
     }
     const updateProgress = () => {
         // Инициализация Mock-данных
->>>>>>> 06.Initialize_Mock_Data
         if (count !== 0 && status === statusConsts.idle) {
             setStatus(statusConsts.pending)
         }
@@ -44,18 +35,12 @@ const useMockData = () => {
     }
 
     useEffect(() => {
-<<<<<<< HEAD
-=======
         // Инициализация Mock-данных
->>>>>>> 06.Initialize_Mock_Data
         updateProgress()
     }, [count])
 
     async function initialize() {
-<<<<<<< HEAD
-=======
         // Инициализация Mock-данных
->>>>>>> 06.Initialize_Mock_Data
         try {
             for (const prof of professions) {
                 await httpService.put('profession/' + prof._id, prof)
@@ -75,13 +60,7 @@ const useMockData = () => {
         }
     }
 
-<<<<<<< HEAD
-    return (
-        { error, initialize, progress, status }
-    )
-=======
     return { error, initialize, progress, status }
->>>>>>> 06.Initialize_Mock_Data
 }
 
 export default useMockData

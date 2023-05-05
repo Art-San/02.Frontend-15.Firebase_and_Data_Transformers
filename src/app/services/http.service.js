@@ -15,12 +15,8 @@ axios.interceptors.request.use(
         }
         // console.log(config.url)
         return config
-<<<<<<< HEAD
     },
     function (error) {
-=======
-    }, function (error) {
->>>>>>> 06.Initialize_Mock_Data
         return Promise.reject(error)
     }
 )
@@ -29,24 +25,15 @@ axios.interceptors.request.use(
 function transformData(data) {
     return data
         ? Object.keys(data).map((key) => ({
-<<<<<<< HEAD
               ...data[key]
           }))
-=======
-            ...data[key]
-        }))
->>>>>>> 06.Initialize_Mock_Data
         : []
 }
 
 axios.interceptors.response.use(
     (res) => {
-<<<<<<< HEAD
         if (configFile.isFireBase) {
             // Axios interceptors.  Response. Трансформация данных
-=======
-        if (configFile.isFireBase) { // Axios interceptors.  Response. Трансформация данных
->>>>>>> 06.Initialize_Mock_Data
             res.data = { content: transformData(res.data) }
         }
         return res
